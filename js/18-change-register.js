@@ -20,8 +20,8 @@ for (const letter of letters){
 // }
 
 // Вариант 2 через тернарник:
-const isEqual = letter === letter.toLowerCase();
-invertedSring += isEqual  ? letter.toUpperCase() : letter.toLowerCase();
+const isInLowerCase = letter === letter.toLowerCase();
+invertedSring += isInLowerCase  ? letter.toUpperCase() : letter.toLowerCase();
 }
 
 console.log('invertedSring: ', invertedSring);
