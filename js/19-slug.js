@@ -22,4 +22,5 @@ const title = 'Top 10 benefits of React framework';
 
 
 const slug = title.toLowerCase().split(' ').join('-');
+
 console.log(slug);
