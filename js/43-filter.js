@@ -33,6 +33,7 @@ console.table(onlinePlayers);
 const offlinePlayers = players.filter(player => !player.online)
 console.table(offlinePlayers);
 
+
 // Получить список хардкор игрогов с временем больше 250
 
 // const hardcorePlayers = players.filter(player => player.timePlayed > 80)
