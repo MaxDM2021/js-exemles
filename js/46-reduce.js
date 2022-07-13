@@ -5,16 +5,16 @@
 // reduce - уменьшать с англ.
 
 
-const numbers = [5, 10, 15, 20, 25];
+// const numbers = [5, 10, 15, 20, 25];
 
-const total = numbers.reduce((acc, number) => {
-    console.log('number', number);
-    console.log('acc', acc);
+// const total = numbers.reduce((acc, number) => {
+//     console.log('number', number);
+//     console.log('acc', acc);
 
-    return acc + number;
-}, 0);
+//     return acc + number;
+// }, 0);
 
-console.log(total);
+// console.log(total);
 
 // accumulator = 0 -> number = 5 -> return 0 + 5
 // accumulator = 5 -> number = 10 -> return 5 + 10
@@ -25,43 +25,43 @@ console.log(total);
 
 // Необходимо подсчитать общую зарплату:
 
-const salary = {
-    mango: 100,
-    poly: 50,
-    ajax: 150,
-};
+// const salary = {
+//     mango: 100,
+//     poly: 50,
+//     ajax: 150,
+// };
 
-const totalSalary = Object.values(salary).reduce(
+// const totalSalary = Object.values(salary).reduce(
     // Callback функция
-    (total, value) => total + value, 
-    0);
+//     (total, value) => total + value, 
+//     0);
 
-console.log(totalSalary);
+// console.log(totalSalary);
 
 
 // Нужно посчитать общее кол-во времени, которое потратили все игроки
 
-const players = [
-    {id: 'player-1', name: 'Mango', timePlayed: 310, points: 54, online: false},
-    {id: 'player-2', name: 'Poly', timePlayed: 470, points: 92, online: true},
-    {id: 'player-3', name: 'Kiwi', timePlayed: 230, points: 48, online: false},
-    {id: 'player-4', name: 'Ajax', timePlayed: 150, points: 71, online: true},
-    {id: 'player-5', name: 'Chelsy', timePlayed: 80, points: 48, online: false},
-];
+// const players = [
+//     {id: 'player-1', name: 'Mango', timePlayed: 310, points: 54, online: false},
+//     {id: 'player-2', name: 'Poly', timePlayed: 470, points: 92, online: true},
+//     {id: 'player-3', name: 'Kiwi', timePlayed: 230, points: 48, online: false},
+//     {id: 'player-4', name: 'Ajax', timePlayed: 150, points: 71, online: true},
+//     {id: 'player-5', name: 'Chelsy', timePlayed: 80, points: 48, online: false},
+// ];
 
 
-const totaltimePlayed = players.reduce((totaltime, player) => totaltime + player.timePlayed, 0 );
+// const totaltimePlayed = players.reduce((totaltime, player) => totaltime + player.timePlayed, 0 );
 
-console.log(totaltimePlayed);
+// console.log(totaltimePlayed);
 
 
 // Нужно посчитать общую сумму покупок
 
-const cart = [
-    {label: 'Apples', price: 100, quantity: 2},
-    {label: 'Bananas', price: 120, quantity: 3},
-    {label: 'Lemons', price: 70, quantity: 4},
-]
+// const cart = [
+//     {label: 'Apples', price: 100, quantity: 2},
+//     {label: 'Bananas', price: 120, quantity: 3},
+//     {label: 'Lemons', price: 70, quantity: 4},
+// ]
 
 // 1-й вариант 
 
@@ -70,23 +70,23 @@ const cart = [
 
 // 2-й вариан написания с применением деструктуризации:
 
-const totalAmont =cart.reduce((totalBill, {price, quantity}) => totalBill + price * quantity, 0);
-console.log(totalAmont);
+// const totalAmont =cart.reduce((totalBill, {price, quantity}) => totalBill + price * quantity, 0);
+// console.log(totalAmont);
 
 
 // Coбираем все теги из твитов
 
-const tweets = [
-    {id: '000', likes: 5, tags: ['js', 'node js']},
-    {id: '001', likes: 2, tags: ['html', 'css']},
-    {id: '002', likes: 17, tags: ['html', 'js', 'node js']},
-    {id: '003', likes: 8, tags: ['css', 'react']},
-    {id: '004', likes: 0, tags: ['js', 'node js', 'react']},
-]
+// const tweets = [
+//     {id: '000', likes: 5, tags: ['js', 'node js']},
+//     {id: '001', likes: 2, tags: ['html', 'css']},
+//     {id: '002', likes: 17, tags: ['html', 'js', 'node js']},
+//     {id: '003', likes: 8, tags: ['css', 'react']},
+//     {id: '004', likes: 0, tags: ['js', 'node js', 'react']},
+// ]
 
 // Правильно записать, сначала общий распылить, а потом к нему добавлять по очереди распыленый каждый массив
-const allTags = tweets.reduce((totalTags, tweet) =>  [...totalTags, ...tweet.tags], []);
-console.log(allTags)
+// const allTags = tweets.reduce((totalTags, tweet) =>  [...totalTags, ...tweet.tags], []);
+// console.log(allTags)
 
 // Нужно сделать объект, в котором теги сгрупированы и указано количество каждого из повторяющихся тегов 
 // {
@@ -149,8 +149,36 @@ console.log(allTags)
 
 // Вариант 3: Применяем тернарник - сокращенный вариант
 
-const tagsOrg = allTags.reduce((acc, tag) => ( {...acc, [tag]: acc[tag] ? acc[tag] + 1 :  1,}), {});
-console.log(tagsOrg);
+// const tagsOrg = allTags.reduce((acc, tag) => ( {...acc, [tag]: acc[tag] ? acc[tag] + 1 :  1,}), {});
+// console.log(tagsOrg);
+
+
+
+// ====== еще пример =====
+
+// Reduce всегда имеет аккумулятор  в котором что-то добавляется или изменяется.
+
+function reduce(arr, cb, startValue) {
+    const [firstArrayElement] = arr
+    let acc = startValue ?? firstArrayElement
+
+for (let i = 0; i < arr.length; i +=1){
+const cbRes = cb(acc, arr[i], i, arr)
+console.log('i', i, 'acc', acc)
+acc = cbRes
+}
+
+return acc
+}
+
+const numbers1 = [2, 3, 4]
+
+const reduceRes = reduce(numbers1, (acc, item, i, arr) => {
+    console.log('acc', acc, 'item', item, 'i', i)
+    return acc + item
+}, 0)
+
+
 
 
 

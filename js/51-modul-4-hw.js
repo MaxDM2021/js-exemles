@@ -28,18 +28,48 @@
 //   console.log(pizzaPalace.order('Vienna', makePizza, onOrderError));
 
 
-  function calculateTotalPrice(orderedItems) {
+  // function calculateTotalPrice(orderedItems) {
    
   
-    orderedItems.forEach (function (orderedItem, index){
-        let totalPrice = 0;
-      totalPrice += orderedItem[index];
-       return totalPrice;
-    })  
+  //   orderedItems.forEach (function (orderedItem, index){
+  //       let totalPrice = 0;
+  //     totalPrice += orderedItem[index];
+  //      return totalPrice;
+  //   })  
    
   
   
-  console.log(calculateTotalPrice([12, 85, 37, 4]));
-  console.log(calculateTotalPrice([164, 48, 291]));
-  console.log(calculateTotalPrice([412, 371, 94, 63, 176]));
+  // console.log(calculateTotalPrice([12, 85, 37, 4]));
+  // console.log(calculateTotalPrice([164, 48, 291]));
+  // console.log(calculateTotalPrice([412, 371, 94, 63, 176]));
+
+
+  class StringBuilder {
+    constructor (initialValue){
+        this.value = initialValue;
+    }
+getValue () {
+    return this.value; 
+}
+padEnd (str) {
+    return this.value.padEnd(2, str)
+}
+padStart (str) {
+     return this.value.padStart(3, str)
+}
+
+padBoth (str) {
+     return this.value.padBoth(5, str);
+}
+}
+
+// Change code above this line
+const builder = new StringBuilder(".");
+console.log(builder.getValue()); // "."
+builder.padStart("^");
+console.log(builder.getValue()); // "^."
+builder.padEnd("^");
+console.log(builder.getValue()); // "^.^"
+builder.padBoth("=");
+console.log(builder.getValue()); // "=^.^="
   

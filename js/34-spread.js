@@ -88,3 +88,12 @@ const finalSettings = {
 
 console.log(finalSettings);
 
+// ======еще пример====
+
+function resSpred(a, b, ...args) {
+    console.log(args);
+}
+
+resSpred(1, 2, 3, 4, 5)
+
+// На выходе будет (1, 2, [3, 4, 5])
